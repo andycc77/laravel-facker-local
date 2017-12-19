@@ -1,0 +1,7 @@
+.favorite,.not-favorite:hover{
+    color: red;
+}
+
+.not-favorite,.favorite:hover{
+    color: #000;
+}

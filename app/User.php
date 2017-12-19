@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Lesson::class, 'favorites')->withTimestamps();//如果沒聲明會預設lesson_user當作第三張表
+    }
 }
