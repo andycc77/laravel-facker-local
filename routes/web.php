@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lessons', function (){
+    $lessons = \App\Lesson::latest()->paginate(15);
+//    dump($lessons->chunk(3));
+    return view('lessons.index', compact('lessons'));
+});
